@@ -4,7 +4,9 @@
 
   When("the customer searches for the course {string}", (courseName) => {
  
-    cy.get('[id="search_widgets"][id="searchtype"]').type(courseName);
-    cy.get('[id="search_widgets"][id="searchtypebutton"]').click();
-    
+    const firstVisibleSearchInput = cy.get('[id="search_widgets"] [id="searchtype"]').filter(':visible').first()
+    firstVisibleSearchInput.type(courseName);
+
+    const firstVisibleSearchButton = cy.get('[id="search_widgets"] [id="searchtypebutton"]')
+    firstVisibleSearchButton.click();
   });
