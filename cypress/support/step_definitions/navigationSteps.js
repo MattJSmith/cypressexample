@@ -8,5 +8,8 @@ Given("the browser is on the page {string}", (url) => {
     catch{
       console.log("The Popup asking to verify your country did not appear so continueing test.")
     }
+    
+    cy.get('[id="hs-eu-confirmation-button"]').click();
+    
 
   });
