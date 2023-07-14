@@ -1,8 +1,8 @@
 
   When("the customer clicks learn more about {string}", (courseName) => {
-    const corseHeaderElement = cy.get('[class="product-title"][title="'+courseName+'"]')
-    const parentElement = corseHeaderElement.parent('[class="course clist cs-course-list"]')
-    parentElement.find('[class="cs-learn-add"][class="cs-btn-inner"]').click();
+    const corseHeaderElement = cy.get('[title="'+courseName+'"]')
+    const parentElement = corseHeaderElement.closest('[class="new-course-space-inner"]')
+    parentElement.find('[class="cs-learn-add"] [class="cs-btn-inner"]').click();
   });
   
   When("the course is added to the cart with the details {string} {string} with a printed certificate", (language, testCenter) => {
