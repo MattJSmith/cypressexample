@@ -22,10 +22,7 @@
   
   Then("the total cost comes to {string}", (expectedCost) => {
 
-    cy.get('[class="product-total"][class="value"]').then(($productTotalElement) => {
+    cy.get('[class="product-total"] [class="value"]').then(($productTotalElement) => {
       expect($productTotalElement.text()).to.equal(expectedCost);
-      //Challenge states "Identify the total cost of the course and record the value."
-      //Tests usually do assertions so I'm not sure if the wording was correct here? 
-      //It could be stored in a csv, db etc if needed.
     });
   });

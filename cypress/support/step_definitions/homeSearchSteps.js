@@ -7,6 +7,6 @@
     const firstVisibleSearchInput = cy.get('[id="search_widgets"] [id="searchtype"]').filter(':visible').first()
     firstVisibleSearchInput.type(courseName);
 
-    const firstVisibleSearchButton = cy.get('[id="search_widgets"] [id="searchtypebutton"]')
+    const firstVisibleSearchButton = cy.get('[id="search_widgets"] [id="searchtypebutton"]').filter(':visible').first()
     firstVisibleSearchButton.click();
   });
