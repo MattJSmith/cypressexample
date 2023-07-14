@@ -1,10 +1,17 @@
+const cucumber = require("cypress-cucumber-preprocessor").default;
+
 module.exports = {
-  e2e: {
-    setupNodeEvents(on, config) {
-      // implement node event listeners here
-      
-    },
-    integrationFolder: 'features',
-    stepDefinitions: 'steps',
+  plugins: {
+    "cypress-cucumber-preprocessor": {
+      nonGlobalStepDefinitions: true,
+    }
   },
+  e2e: {
+    specPattern: "cypress/features/**/*.feature",
+    headed: true,
+    setupNodeEvents(on) {
+      on("file:preprocessor", cucumber())
+    },
+   
+  }
 };

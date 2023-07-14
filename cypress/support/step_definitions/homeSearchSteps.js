@@ -4,4 +4,7 @@
 
   When("the customer searches for the course {string}", (courseName) => {
  
+    cy.get('[id="search_widgets"][id="searchtype"]').type(courseName);
+    cy.get('[id="search_widgets"][id="searchtypebutton"]').click();
+    
   });
